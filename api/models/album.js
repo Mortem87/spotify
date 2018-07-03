@@ -11,4 +11,5 @@ var AlbumSchema = schema({
 	artist: { type: schema.ObjectId, ref:'Artist'}
 });
 
+
 module.exports = mongoose.model('Album', AlbumSchema);
