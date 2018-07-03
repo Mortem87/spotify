@@ -22,7 +22,6 @@ function getArtist(req, res){
 			}
 		}
 	});
-	//res.status(200).send({message: 'Método getArtist del controlador artist.js'});
 }
 
 function saveArtist(req, res){
