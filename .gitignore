@@ -1,0 +1,4 @@
+/api/uploads/albums/*
+/api/uploads/artists/*
+/api/uploads/songs/*
+/api/uploads/users/*
