@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   public user: User;
   public identity;
   public token;
+  public errorMessage;
 
   constructor(
   	private _userService:UserService
@@ -22,19 +23,68 @@ export class AppComponent implements OnInit{
   ngOnInit(){
   	//var texto = this._userService.signup(this.user);
   	//console.log(texto);
+  	this.identity = this._userService.getIdentity();
+  	this.token = this._userService.getToken();
+
+  	console.log(this.identity);
+  	console.log(this.token);
+
   }
 
   public onSubmit(){
   	console.log(this.user);
 
+  	//conseguir los datos del usuario identificado
   	this._userService.signup(this.user).subscribe(
   		response => {
-  			console.log(response);
+  			let identity = response.user;
+  			this.identity = identity;
+
+  			if(!this.identity._id){
+  				alert("El usuario no esta completamente identificado.");
+  			}else{
+  				//crear elemento en el localstorage para al usuario sesion
+  				localStorage.setItem('identity', JSON.stringify(identity));
+
+  				//conseguir el token para enviarselo a cada peticion http
+  				this._userService.signup(this.user, 'true').subscribe(
+			  		response => {
+			  			let token = response.token;
+			  			this.token = token;
+
+			  			if(this.identity._id <= 0){
+			  				alert("El token no se ha generado.");
+			  			}else{
+			  				//crear elemento en el localstorage para tener el token disponible
+			  				localStorage.setItem('token', token);			
+
+			  				console.log(token);
+			  				console.log(identity);
+
+			  			}
+			  			//console.log(response);
+			  		},
+			  		error => {
+			  			var errorMessage = <any>error;
+
+			  			if(errorMessage != null){
+			  				var body = JSON.parse(error._body);
+
+			  				this.errorMessage = body.message;
+			  				console.log(error);
+			  			}
+			  		}
+			  	);
+  			}
+  			//console.log(response);
   		},
   		error => {
   			var errorMessage = <any>error;
 
   			if(errorMessage != null){
+  				var body = JSON.parse(error._body);
+
+  				this.errorMessage = body.message;
   				console.log(error);
   			}
   		}

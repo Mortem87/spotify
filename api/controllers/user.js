@@ -78,7 +78,7 @@ function loginUser(req, res){
 						}
 					}else{
 						if(!userUpdated){
-							res.status(404).send({message: 'El usuario no ha podidi loguearse'});	
+							res.status(404).send({message: 'El usuario no ha podido loguearse'});	
 						}else{
 							res.status(200).send({user: userUpdated});
 						}
