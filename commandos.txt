@@ -1,0 +1,71 @@
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo aptitude update && sudo aptitude install libappindicator1
+sudo aptitude update
+
+
+sudo apt-get update
+sudo apt-get install libappindicator1
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get install -y build-essential
+
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+
+sudo service mongod start
+
+sudo mongorestore -d curso_mean2  dump/curso_mean2
+
+mongo help
+use curso_mean2
+db.getCollectionNames()
+# Resync git repo with new gitignore file
+git rm -r --cached .
+
+npm install mongoose
+https://blog.bluematador.com/posts/postman-how-to-install-on-ubuntu-1604/
+
+wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+sudo tar -xzf postman.tar.gz -C /opt
+rm postman.tar.gz
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+sudo npm install supervisor -g
+supervisor index.js 
+/api/uploads/albums/*
+/api/uploads/artists/*
+/api/uploads/songs/*
+/api/uploads/users/*
+y0Jra8Rwg7S69apTB9QhcL2a.jpg
+
+
+5b2c34c69650ea23a4c939d8
+
+
+http://www.harrycampaz.com/2014/03/configurar-carpeta-compartida-de-virtualBox-en-linux.html
+
+
+sudo mount -t vboxsf ubuntu /media/compartida
+
+
+sudo npm install -g angular-cli
+
+ng serve
+
+
+TypeScript en sublimetext
+
+cd ~/.config/sublime-text-3/Packages
+git clone --depth 1 https://github.com/Microsoft/TypeScript-Sublime-Plugin.git TypeScript
+ctrl + shift + p
+teclear "TypeScript"
+
+
+https://code.jquery.com/jquery-1.12.4.min.js
+

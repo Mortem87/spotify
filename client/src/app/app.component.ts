@@ -11,14 +11,16 @@ export class AppComponent implements OnInit{
   
   public title = 'Musify';
   public user: User;
+  public user_register: User;
   public identity;
   public token;
   public errorMessage;
-
+  public alertRegister;
   constructor(
   	private _userService:UserService
   	){
   	this.user = new User('', '', '', '', '', 'ROL_USER', '');
+  	this.user_register = new User('', '', '', '', '', 'ROL_USER', '');
   }
   ngOnInit(){
   	//var texto = this._userService.signup(this.user);
@@ -57,9 +59,9 @@ export class AppComponent implements OnInit{
 			  			}else{
 			  				//crear elemento en el localstorage para tener el token disponible
 			  				localStorage.setItem('token', token);			
-
-			  				console.log(token);
-			  				console.log(identity);
+			  				this.user = new User('', '', '', '', '', 'ROL_USER', '');
+			  				//console.log(token);
+			  				//console.log(identity);
 
 			  			}
 			  			//console.log(response);
@@ -85,6 +87,40 @@ export class AppComponent implements OnInit{
   				var body = JSON.parse(error._body);
 
   				this.errorMessage = body.message;
+  				console.log(error);
+  			}
+  		}
+  	);
+  }
+  logout(){
+  	localStorage.removeItem('identity');
+  	localStorage.removeItem('token');
+  	localStorage.clear();
+  	this.identity = null;
+  	this.token = null;
+  }
+  
+
+  onSubmitRegister(){
+  	console.log(this.user_register);
+  	this._userService.register(this.user_register).subscribe(
+  		response => {
+  			let user = response.user;
+  			this.user_register = user;
+  			if(!user._id){
+  				this.alertRegister = "Error  al registrarse.";
+  			}else{
+  				this.alertRegister = 'El registro se ha realizado correctamente, identificate con ' + this.user_register.email;
+  				this.user_register = new User('', '', '', '', '', 'ROL_USER', '');
+  			}
+  		},
+  		error => {
+  			var errorMessage = <any>error;
+
+  			if(errorMessage != null){
+  				var body = JSON.parse(error._body);
+
+  				this.alertRegister = body.message;
   				console.log(error);
   			}
   		}
