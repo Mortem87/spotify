@@ -47,18 +47,35 @@ y0Jra8Rwg7S69apTB9QhcL2a.jpg
 
 5b2c34c69650ea23a4c939d8
 
+caracteres unicode ascii
+setxkbmap -option compose:ralt 
+
+ctrl + shift + u + {hex} + enter
+char    {hex}
+á   - 	E1
+é   - 	E9
+í   - 	ED
+ó   - 	F3
+ú   - 	FA
+¿   - 	BF
+[   - 	5B
+\   - 	5C
+]   - 	5D
+{   - 	7B
+|   - 	7C
+}   - 	7D 
 
 http://www.harrycampaz.com/2014/03/configurar-carpeta-compartida-de-virtualBox-en-linux.html
 
-
 sudo mount -t vboxsf ubuntu /media/compartida
 
+sudo umount /media/sf_ubuntu
 
 sudo npm install -g angular-cli
 
 ng serve
 
-
+¡h?¿
 TypeScript en sublimetext
 
 cd ~/.config/sublime-text-3/Packages
@@ -68,4 +85,8 @@ teclear "TypeScript"
 
 
 https://code.jquery.com/jquery-1.12.4.min.js
+
+
+
+cady para poner un 2do Disco duro en el lugar del lector del DVD
 
