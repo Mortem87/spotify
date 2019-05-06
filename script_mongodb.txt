@@ -1,0 +1,104 @@
+//Artist
+db.Artists.insert([
+    {
+        name: "Rammstein",
+        description: "En el año 1994, nace el sexteto alemán Rammstein, formado por 6 músicos de la zona de Berlín y Schwerin, procedentes de distintas bandas de música.Richard , Paul, Christoph , Oliver y Till ya se conocían antes de crear Rammstein , eran amigos algunos eran de Schwerin y hacían música allí , otros en Berlín al mismo tiempo. Till estaba en el rollo del punk, Paul también, Oli tocaba en un grupo folklórico de violines y Richard viene de Crossover , eran 5 solo faltaba Flake , al cual le tuvieron que insistir porque no quería tocar en Rammstein no le gustaban mucho sus ideas, como grupo los veía un poco rollo y aburrido, pero ellos sabían que necesitaban un teclista. Así que al final le convencieron .",
+        image: "null"
+    },
+    {
+        name: "Santa Fe Klan",
+        description: "Artista discográfico afiliado a un grupo llamado Santa Fe Klan, que se hizo conocido por exitosos sencillos como "Ya Se Hizo Costumbre," "Un Loco Enamorado," "Prohibida," "Silencio en el Callejón" y muchos otros.",
+        image: "null"
+    },
+    {
+        name: String,
+        description: "El barrio de Santa Catarina, Nuevo León, fue el lugar que vio nacer en 1999, al Cartel de Santa. Casi 20 años después Eduardo Dávalos mejor conocido como «Babo», sigue siendo el líder y principal vocal de la agrupación y junto a «Rowan Rabia» (Mono), han mantenido la banda a pesar de la salida de algunos integrantes como Dharius en el 2014.",
+        image: "null"
+    },
+    {
+        name: String,
+        description: String,
+        image: String
+    }
+]);
+
+//Song
+db.Songs.insert([
+    {
+        number: "01",
+        name: "Volvió El Sensei",
+        duration: "3:24",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "02",
+        name: "Leve",
+        duration: "3:45",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "03",
+        name: "Bailar Y Volar",
+        duration: "4:16",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "04",
+        name: "Desde Cuando",
+        duration: "3:35",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "05",
+        name: "Clika Nostra",
+        duration: "3:36",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "06",
+        name: "Mucha Marihuana",
+        duration: "3:48",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "07",
+        name: "Culón Culito",
+        duration: "3:43",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "08",
+        name: "El Loco Mas Loco",
+        duration: "4:02",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "09",
+        name: "Si Estuviera en Dubai",
+        duration: "3:22",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "10",
+        name: "Somos Chidos",
+        duration: "3:31",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    },
+    {
+        number: "11",
+        name: "Soy Quien Soy,
+        duration: "3:33",
+        file: "null",
+        album: { type: schema.ObjectId, ref:'Album'}
+    }
+]);
