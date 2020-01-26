@@ -19,6 +19,16 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongod
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
+
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+sudo apt update
+sudo apt-get install libcurl3
+sudo apt install mongodb-org mongodb-org-server
+
+
+
 sudo service mongod start
 
 sudo mongorestore -d curso_mean2  dump/curso_mean2
@@ -46,12 +56,13 @@ y0Jra8Rwg7S69apTB9QhcL2a.jpg
 
 
 5b2c34c69650ea23a4c939d8
-
+'
 caracteres unicode ascii
 setxkbmap -option compose:ralt 
 
 ctrl + shift + u + {hex} + enter
 char    {hex}
+'   - 0027  
 á   - 	E1
 é   - 	E9
 í   - 	ED
@@ -64,7 +75,8 @@ char    {hex}
 {   - 	7B
 |   - 	7C
 }   - 	7D 
-
+ñ   -   00F1
+Ñ   -   00D1
 http://www.harrycampaz.com/2014/03/configurar-carpeta-compartida-de-virtualBox-en-linux.html
 
 sudo mount -t vboxsf ubuntu /media/compartida
@@ -76,6 +88,7 @@ sudo npm install -g angular-cli
 ng serve
 
 ¡h?¿
+
 TypeScript en sublimetext
 
 cd ~/.config/sublime-text-3/Packages
@@ -89,4 +102,22 @@ https://code.jquery.com/jquery-1.12.4.min.js
 
 
 cady para poner un 2do Disco duro en el lugar del lector del DVD
+
+---resolucion de escritorio---
+xdpyinfo | grep 'dimensions:'
+
+crear alias
+sudo gedit ~/.bashrc
+
+
+sudo service mongod start
+cd Documentos/www/spotify/api
+supervisor index.js
+cd Documentos/www/spotify/client
+sudo ng serve --watch
+
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1F3045A5DF7587C3
+
+MPEG-4 AAAC
 

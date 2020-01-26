@@ -44,11 +44,12 @@ export class ArtistAddComponent implements OnInit{
 		console.log(this.artist);
 		this._artistService.addArtist(this.token, this.artist).subscribe(
 			response => {
-				if(!response.artist){
+				if(!response.album){
 					this.alertMessage = 'Error en el servidor';
 				}else{
-					this.alertMessage = 'El artista se ha creado correctamente';
 					this.artist = response.artist;
+					this.alertMessage = 'El artista se ha creado correctamente';
+					this._router.navigate(['/editar-artista', response.artist._id]);
 				}
 			},
 			error => {
@@ -59,6 +60,7 @@ export class ArtistAddComponent implements OnInit{
 
 	  				this.alertMessage = body.message;
 	  				console.log(error);
+	  			}
   			}
 		);
 	}

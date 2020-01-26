@@ -80,9 +80,9 @@ function saveSong(req, res){
 			res.status(500).send({message: 'Error en el servidor'});
 		}else{
 			if(!songStored){
-				res.status(200).send({message: 'No se ha guardado la cancion'});
+				res.status(404).send({message: 'No se ha guardado la cancion'});
 			}else{
-				res.status(500).send({song: songStored});
+				res.status(200).send({song: songStored});
 			}
 		}
 	});
